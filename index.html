@@ -5,14 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <style>
-        body {
-            background: rgb(54, 54, 54);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<body>
-    
+<body style='background-image: url("images/rock.jpg");'>
+    <header>
+        <h1>Rock Paper Scissors</h1>
+    </header>
+    <div class="buttons">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+    </div>
+    <div id="results">
+        <div id="pc-result">PC: <span id="pc">0</span></div>
+        <div id="player-result">Player: <span id="player">0</span></div>
+    </div>
 </body>
 </html>
