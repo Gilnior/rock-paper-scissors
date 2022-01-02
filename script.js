@@ -1,4 +1,4 @@
-const POSSIBLE = ["Rock", "Paper", "Scissors"];
+const POSSIBLE = ["rock", "paper", "scissors"];
 
 let computer_play = () => {;
     return POSSIBLE[getRndInteger(0, 3)];
@@ -9,20 +9,10 @@ function getRndInteger(min, max) {
   }
 
 
-function round () {
-    console.log("Rock is 0, Paper is 1 and Scissors is 2");
+function round (player) {
+    // console.log("Rock is 0, Paper is 1 and Scissors is 2");
     
     const computer = computer_play()
-
-    let valid = false;
-
-    while (!valid) {
-        n = prompt("Rock is 0, Paper is 1 and Scissors is 2\nWhat you will choose?");
-        if (n < 3 && n >= 0){
-            valid = true
-        }
-    }
-    let player = POSSIBLE[Math.floor(n)];
 
     console.log(`You: ${player}\nComputer: ${computer}`)
 
@@ -57,4 +47,13 @@ function game(rounds=5) {
     alert(results)
 }
 
-game()
+const playerSelection = event => {
+    round(event.target.id);
+};
+
+const buttons = document.querySelectorAll("button");
+buttons.forEach(
+    (button) => {
+        button.addEventListener("click", playerSelection);
+    }
+);
