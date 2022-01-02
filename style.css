@@ -14,14 +14,33 @@ body {
 }
 
 .buttons button {
-    background-color: yellow;
+    background-color: gray;
     border-radius: 6px;
     padding: 10px;
     width: 100px;
+}
+
+#game h2 {
+    text-align: center;
+}
+
+#current-game {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-content: center;
+}
+
+.current {
+    border: 2px solid whitesmoke;
+    width: 120px;
+    padding: 15px 20px;
 }
 
 #results {
     display: flex;
     gap: 30px;
     border: 2px solid black;
+    border-radius: 9px;
+    padding: 15px 20px;
 }

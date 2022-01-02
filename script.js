@@ -14,28 +14,41 @@ function round (player) {
     
     const computer = computer_play()
 
-    console.log(`You: ${player}\nComputer: ${computer}`)
+    updateGame(player,computer);
 
     return check_victory(player, computer);
 
   }
 
-  function check_victory(player, computer) {
+function check_victory(player, computer) {
     if (player == computer) {
-        console.log(`Draw, both played ${player}`)
-        return "d"
+        console.log(`Draw, both played ${player}`);
+        updateResult("draw");
     } else if (
         player == POSSIBLE[0] && computer == POSSIBLE[2] ||
         player == POSSIBLE[1] && computer == POSSIBLE[0] ||
         player == POSSIBLE[2] && computer == POSSIBLE[1]
         ) {
-        console.log("You win")
-        return 'w'
+        console.log("You win");
+        updateResult('player');
     } else {
-        console.log("You lose")
-        return 'l'
+        console.log("You lose");
+        updateResult('pc');
     }
   }
+
+function updateResult(result){
+    const score = document.querySelector(`#results #${result}`);
+    score.textContent = parseInt(score.textContent) + 1;
+}
+
+function updateGame(player, pc) {
+    const playerCurrent = document.querySelector("#current-player");
+    const pcCurrent = document.querySelector("#current-pc");
+
+    playerCurrent.textContent = player;
+    pcCurrent.textContent = pc;
+}
 
 function game(rounds=5) {
     let results = [];
